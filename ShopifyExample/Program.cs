@@ -19,11 +19,7 @@ internal class Program {
 
     public async Task<ListResult<ShopifySharp.Order>> GetOpenShopifyOrders() {
         string ShopUrl = "https://skl-home.myshopify.com/admin/api/2022-10/";
-        string AccessToken = "shpat"+
-                            "_fe3b499e742"
-                            +"f97b11362ae"
-                            +"4b3fb14388";
-
+       
         try {
             var orderService = new OrderService(ShopUrl, AccessToken);
             var shopifyOrders = await orderService.ListAsync(new OrderListFilter() { Status = "open", Limit = 250 });
